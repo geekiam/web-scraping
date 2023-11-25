@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BD0A81FC-7EC1-4F22-AC72-B50D246DD582}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enrichment", "src\scraper\Enrichment.csproj", "{83EBB5B3-87BC-45BB-AFAC-31D35460F30E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enrichment.Tests", "tests\Enrichment.Tests\Enrichment.Tests.csproj", "{75735B65-23DF-4CDF-9199-04C824726570}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C1AAA0DE-2DCA-41B9-A1FF-14404DAC3BEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83EBB5B3-87BC-45BB-AFAC-31D35460F30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EBB5B3-87BC-45BB-AFAC-31D35460F30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EBB5B3-87BC-45BB-AFAC-31D35460F30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EBB5B3-87BC-45BB-AFAC-31D35460F30E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75735B65-23DF-4CDF-9199-04C824726570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75735B65-23DF-4CDF-9199-04C824726570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75735B65-23DF-4CDF-9199-04C824726570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75735B65-23DF-4CDF-9199-04C824726570}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83EBB5B3-87BC-45BB-AFAC-31D35460F30E} = {BD0A81FC-7EC1-4F22-AC72-B50D246DD582}
+		{75735B65-23DF-4CDF-9199-04C824726570} = {C1AAA0DE-2DCA-41B9-A1FF-14404DAC3BEF}
+	EndGlobalSection
+EndGlobal
