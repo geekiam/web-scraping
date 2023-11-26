@@ -1,0 +1,34 @@
+name: main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+      - name: Check out Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Run cake
+        uses : cake-build/cake-action@v1.4.1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      - name: Create check run with code coverage Markdown report
+        uses: LouisBrunner/checks-action@v1.6.2
+        if: always()
+        with:
+          token: ${{ github.token }}
+          name: Code Coverage Summary
+          conclusion: ${{ job.status }}
+          output: '{"summary":"Geekiam Web Scraping Code Coverage Summary"}'
+          output_text_description_file: coverage/summary/SummaryGithub.md
