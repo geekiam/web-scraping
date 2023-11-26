@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <AssemblyName>Geekiam.Enrichment</AssemblyName>
     <RootNamespace>Geekiam.Enrichment</RootNamespace>
   </PropertyGroup>
   <ItemGroup>

@@ -2,14 +2,14 @@
     <PropertyGroup>
         <Authors>Geekiam</Authors>
         <TargetFramework>net8.0</TargetFramework>
-        <Title>Geekiam Feeds</Title>
-        <Description>Feed Management Database </Description>
+        <Title>Geekiam Web Scraping Utility</Title>
+        <Description>Geekiam</Description>
         <RepositoryType>git</RepositoryType>
         <PackageTags>rss, dotnet, feeds</PackageTags>
-        <RepositoryUrl>https://github.com/geekiam/feed-db</RepositoryUrl>
+        <RepositoryUrl>https://github.com/geekiam/web-scraping</RepositoryUrl>
         <Copyright>Copyright © $([System.DateTime]::Now.ToString("yyyy")) Geekiam</Copyright>
         <PackageProjectUrl>https://geekiam.io</PackageProjectUrl>
-        <license>https://github.com/geekiam/feed-db/blob/master/LICENSE</license>
+        <license>https://github.com/geekiam/web-scraping/blob/master/LICENSE</license>
         <PackageIcon>icon.png</PackageIcon>
         <Version></Version>
         <RootNamespace>Geekiam</RootNamespace>
