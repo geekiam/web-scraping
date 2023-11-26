@@ -1,10 +1,9 @@
-using System.Reflection;
-using System.Runtime.CompilerServices;
+using Geekiam.Enrichment;
 using Geekiam.Enrichment.MetagNames;
 using Geekiam.Enrichment.Models;
 using HtmlAgilityPack;
 
-namespace Geekiam.Enrichment;
+namespace Enrichment;
 
 public class WebPageParser
 {

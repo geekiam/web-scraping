@@ -1,4 +1,4 @@
-namespace Geekiam.Enrichment.MetagNames;
+namespace Geekiam.Enrichment.MetaTagNames;
 
 internal static class MetaAttributes
 {
