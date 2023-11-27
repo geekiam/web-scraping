@@ -3,6 +3,14 @@
 
    
 
+    <PropertyGroup>
+      <AssemblyName>Geekiam.Enrichment.Tests</AssemblyName>
+      <RootNamespace>Geekiam.Enrichment.Tests</RootNamespace>
+    </PropertyGroup>
+
+
+   
+
     <ItemGroup>
       <ProjectReference Include="..\..\src\scraper\Enrichment.csproj" />
     </ItemGroup>

@@ -2,7 +2,7 @@
     <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))"/>
   
    <ItemGroup>
-       <InternalsVisibleTo Include="Unit" />
+       <InternalsVisibleTo Include="Geekiam.Enrichment.Tests" />
    </ItemGroup>
 </Project>
 

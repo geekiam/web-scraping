@@ -4,34 +4,52 @@ using Geekiam.Enrichment.MetagNames;
 using HtmlAgilityPack;
 using Shouldly;
 
-namespace Enrichment.Tests;
+namespace Geekiam.Enrichment.Tests;
 
 public class WebSiteParseTests
 {
-    [Fact]
+
+	[Fact, Description("Should throw an exception if url is null or empty")]
+	public async Task ShouldThrowExceptionIfUrlIsNullOrEmpty()
+	{
+		var parser = new WebPageParser();
+		await Should.ThrowAsync<ArgumentException>(async () => await parser.Extract(string.Empty));
+	}
+	
+    [Fact, Description("Should parse a website and return a MetaData object")]
     public async Task ShouldParseWebsite()
     {
         var parser = new WebPageParser();
-
         var result = await parser.Extract("https://garywoodfine.com/abstract-factory-design-pattern/");
-        result.ShouldNotBeNull();
         
+        result.ShouldSatisfyAllConditions(
+	        x => x.ShouldNotBeNull(),
+	        x => x.Title.ShouldBe("How to use the Abstract Factory design pattern in C# | Gary Woodfine"),
+	        x => x.Description.ShouldBe("Learn how to use the Abstract Factory .NET Design Pattern C# in order to help improve and enhance your code for greater testability.")
+	        );
     }
 
     [Fact, Description("Should get an empty string returned for any tag that does exist")]
     public void ShouldGetEmptyStringForNonExistingTag()
     {
-	    var poo = Extractor.GetMetaContent(TestDocument(), "random:tagName");
-	    poo.ShouldNotBeNull();
-	    poo.ShouldBe(string.Empty);
+	    var result = Extractor.GetMetaContent(TestDocument(), "random:tagName");
+	    result.ShouldSatisfyAllConditions(
+		    x =>x.ShouldNotBeNull(x),
+		    x => x.ShouldBe(string.Empty)
+		    );
+	   
     }
 
     [Fact, Description("Should get a value for the title tag")]
-    public void ShouldGetValueForTtileTag()
+    public void ShouldGetValueForTitleTag()
     {
-	    var poo = Extractor.GetMetaContent(TestDocument(), TwitterTagName.Title);
-	    poo.ShouldNotBeNull();
-	    poo.ShouldBeEquivalentTo("How to add Tailwind CSS to Blazor website | Gary Woodfine");
+	    var result = Extractor.GetMetaContent(TestDocument(), TwitterTagName.Title);
+	    
+	    result.ShouldSatisfyAllConditions(
+		    x => x.ShouldNotBeNull(),
+		    x => x.ShouldBeOfType<string>(),
+		    x => x.ShouldBeEquivalentTo("How to add Tailwind CSS to Blazor website | Gary Woodfine")
+		    );
     }
 
     private static HtmlDocument TestDocument()
@@ -39,12 +57,8 @@ public class WebSiteParseTests
         var document = new HtmlDocument();
       document.LoadHtml(TestHtml);
       return document;
-
-
     }
     
-    
-
     private static string TestHtml => @"
 <html lang=""en-GB"">
 <head>
